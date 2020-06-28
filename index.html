@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>倒计时</title>
+		<style type="text/css">
+			#date {
+				text-align:center;
+				border:solid 1px lightgray;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="date">
+			<h1>倒计时</h1>
+			<hr >
+			<!-- 今天的日期 -->
+			<div id="">
+				<h2>
+				<div id="today">
+				</div>
+				</h2>
+			</div>
+			<!-- 距离7月23日上午9时还有 -->
+			<div id="">
+				<h2>距离7月23日上午9时还有
+				<div id="daysCount">
+				</div>
+				</h2>
+			</div>
+			<div id="">
+				<h2>距离7月23日上午9时还有
+				<div id="hoursCount">
+				</div>
+				</h2>	
+			</div>
+			</div>
+		<script type="text/javascript">
+			var now = new Date();
+			var today = document.getElementById('today');
+			today.innerHTML = '今天是：' + now.toLocaleString();
+			var daysCount = document.getElementById('daysCount');
+			var endDay = new Date(2020,6,23,10,0,0);
+			var days = parseInt((endDay - now)/(24*60*60*1000)) + 1;
+			daysCount.innerHTML = days + '天';
+			var hours = parseInt((endDay - now)/(60*60*1000));
+			var hoursCount = document.getElementById('hoursCount');
+			hoursCount.innerHTML = hours + '小时。'
+		</script>
+    </body>
+</html>
